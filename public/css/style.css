@@ -1,0 +1,405 @@
+@font-face {
+    font-family: 'Apple-system';
+    src: url("../fonts/apple.ttf");
+}
+
+body {
+    font-family: Apple-system, Arial, sans-serif;
+    font-size: 100%;
+}
+
+.wrapper {
+    margin: 0;
+    background-color: white;
+    position: relative;
+    width: 100%;
+}
+
+header {
+    height: 40px;
+    box-sizing: border-box;
+
+}
+
+main {
+    box-sizing: border-box;
+    width: 90%;
+    text-align: justify;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+    z-index: 0;
+
+}
+
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.menu {
+    display: inline-flex;
+    justify-content: space-between;
+    position: fixed;
+    margin: 0;
+    height: 40px;
+    background-color: rgba(0, 0, 0, .85);
+    width: 100%;
+}
+
+.menu_left, .menu_right {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 0;
+    padding: 0 10px;
+    height: 40px;
+
+}
+
+.menu_left {
+    justify-content: left;
+
+}
+
+.menu_right_logged {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0 10px;
+    height: 40px;
+    width: 200px;
+
+}
+
+.menu_right_logged li {
+    color: #999;
+    list-style: none;
+    font-size: 0.9rem;
+}
+
+.menu_right_logged li a {
+    color: #999;
+    text-decoration: none;
+    transition: ease-in-out color .2s;
+    outline: 0 !important;
+}
+
+.menu_right_logged li a:hover {
+    color: white;
+}
+
+.menu_right_logged li b {
+    color: green;
+}
+
+.menu_left {
+    width: 30%;
+}
+
+.menu_right {
+    width: 200px;
+}
+
+.menu_left li, .menu_right li {
+    color: #999;
+    list-style: none;
+}
+
+.menu_left li a, .menu_right li a {
+    color: #999;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: ease-in-out color .2s;
+    outline: 0 !important;
+}
+
+.menu_left li:not(:first-child) {
+    margin-left: 30px;
+}
+
+.menu_left li a:hover, .menu_right li a:hover {
+    color: white;
+}
+
+.menu_right .search_button {
+    color: #999;
+    transition: ease-in-out color .2s;
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    background-color: inherit;
+}
+
+.menu_right .search_button:hover {
+    color: white;
+    cursor: pointer;
+}
+
+.menu_right .search_button:active, .menu_right .search_button:focus {
+    outline: 0 !important;
+    border: 0;
+}
+
+.menu_right .logout {
+    font-size: 0.9rem;
+}
+
+.menu_form {
+    display: none;
+    position: fixed;
+    box-sizing: border-box;
+    width: 300px;
+    right: 0;
+    background-color: #343a40;
+    padding: 10px;
+    border-radius: 10px;
+    color: #999;
+    box-shadow: 0 3px 3px gray, -3px 3px 3px gray;
+    z-index: 10000;
+}
+
+.menu_form fieldset {
+    border: 0;
+}
+
+.menu_form input {
+    display: block;
+    right: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    z-index: 100;
+    box-sizing: border-box;
+}
+
+.menu_form input[type="checkbox"], .menu_form input[type="radio"] {
+    display: inline-block;
+    width: auto;
+}
+
+#roleAdmin, #roleUser {
+    margin-left: 20px;
+}
+
+.menu_form fieldset > label {
+    width: 100%;
+    display: block;
+}
+
+.menu_form button {
+    color: white;
+    padding: 0;
+    width: 50%;
+    height: 30px;
+    background-color: darkslateblue;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: ease-in-out background-color .2s;
+}
+
+.menu_form button:hover {
+    background-color: cornflowerblue;
+
+}
+
+.menu_form button:active, .menu_form button:focus {
+    outline: 0 !important;
+}
+
+.flash {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0;
+}
+
+.Ok {
+
+    background-color: green;
+
+}
+
+.Alert {
+
+    background-color: firebrick;
+
+}
+
+.crud {
+    box-sizing: border-box;
+    display: table;
+    border-collapse: collapse;
+    border: 2px solid blue;
+    width: 100%;
+
+}
+
+.crud_row {
+    display: table-row;
+    width: 100%;
+    list-style: none;
+    height: 30px;
+
+}
+
+.crud_row-title {
+    display: table-row;
+    width: 100%;
+    list-style: none;
+    height: 30px;
+
+}
+
+.crud_row-title li {
+    text-align: center;
+    border: 2px solid blue;
+}
+
+.crud_row:hover {
+    outline: 1px solid blue;
+}
+
+.crud li {
+    display: table-cell;
+    border-left: 2px solid blue;
+    border-right: 2px solid blue;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+
+.crud .isactive, .crud .role {
+    width: 8%;
+    text-align: center;
+}
+
+.crud .regdate {
+    width: 20%;
+    text-align: center;
+}
+
+
+.crud li:last-child {
+    width: 8%;
+    padding: 0;
+}
+
+.crud_row:hover li button {
+    display: inline-block;
+}
+
+.crud li button {
+    display: none;
+    margin: 0;
+    margin-left: 5px;
+    border-radius: 5px;
+    height: 25px;
+    padding: 3px;
+}
+
+.crud li button.action {
+    border: 2px solid darkblue;
+    background-color: lightblue;
+    transition: ease-in-out background-color .2s;
+}
+
+.crud li button.action:hover {
+    background-color: blue;
+}
+
+.crud li button.danger {
+    border: 2px solid brown;
+    background-color: #F19425;
+    transition: ease-in-out background-color .2s;
+}
+
+.crud li button.danger:hover {
+    background-color: red;
+}
+
+#delForm fieldset button, #editForm fieldset button {
+    display: inline-block;
+    width: 30%;
+}
+
+#delForm button:first-child, #editForm button:first-child {
+    float: left;
+}
+
+#delForm button:last-child, #editForm button:last-child {
+    float: right;
+}
+
+.side {
+    width: 200px;
+    min-height: 150px;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, .85);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+}
+
+.side h3 {
+    color: green;
+    text-align: center;
+}
+
+.side ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.side ul li {
+    margin-top: 10px;
+}
+
+.side ul li a {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: none;
+    transition: ease-in-out color .2s;
+    outline: 0 !important;
+}
+
+.side ul li a:hover {
+    color: white;
+}
+
+.content {
+    margin-left: 220px;
+}
+
+.current {
+    color: white !important;
+}
+
+
+.find {
+    margin-bottom: 20px;
+}
+
+.find input {
+    display: block;
+    width: 100%;
+    border: 2px solid blue;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #9d9d9d;
+    padding: 5px;
+    box-sizing: border-box;
+    outline: 0 !important;
+}
+
+
+
